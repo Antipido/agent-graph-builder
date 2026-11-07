@@ -1,0 +1,154 @@
+@import "tailwindcss";
+@import "@xyflow/react/dist/style.css";
+
+:root {
+  --bg-canvas: #0B0B0E;
+  --grid-dot: #222228;
+  --surface-panel: #121216;
+  --surface-elevated: #17171D;
+  --surface-input: #0E0E12;
+  --border-subtle: #26262E;
+  --border-hover: #383844;
+  --accent-gold: #D4AF37;
+  --text-ivory: #F5F2EB;
+  --text-secondary: #8E8E99;
+  --text-muted: #5C5C66;
+  --node-entrada: #D4AF37;
+  --node-trabalhador: #E2D9C5;
+  --node-supervisor: #E07A5F;
+  --node-entrega: #4E9F6E;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0B0B0E;
+  color: #F5F2EB;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.font-display {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Custom subtle scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0E0E12;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #26262E;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #383844;
+}
+
+/* React Flow Customizations */
+.react-flow__pane {
+  cursor: grab;
+}
+
+.react-flow__pane:active {
+  cursor: grabbing;
+}
+
+.react-flow__edge-path {
+  stroke: #4A4A56;
+  stroke-width: 2;
+  transition: stroke 160ms ease, stroke-width 160ms ease, filter 160ms ease;
+}
+
+.react-flow__edge:hover .react-flow__edge-path {
+  stroke: #8E8E99;
+  stroke-width: 2.5;
+}
+
+.react-flow__edge.selected .react-flow__edge-path {
+  stroke: #D4AF37 !important;
+  stroke-width: 2.75 !important;
+  filter: drop-shadow(0 0 6px rgba(212, 175, 55, 0.35));
+}
+
+.react-flow__connection-path {
+  stroke: #D4AF37 !important;
+  stroke-width: 2.25 !important;
+  stroke-dasharray: 5 5;
+}
+
+.react-flow__attribution {
+  display: none !important;
+}
+
+/* Custom port handles */
+.agent-handle {
+  width: 12px !important;
+  height: 12px !important;
+  background-color: #17171D !important;
+  border: 2px solid #5C5C66 !important;
+  border-radius: 9999px !important;
+  transition: transform 150ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 150ms ease,
+    border-color 150ms ease,
+    box-shadow 150ms ease !important;
+}
+
+.agent-handle:hover,
+.react-flow__node.selected .agent-handle {
+  border-color: #D4AF37 !important;
+  background-color: #262216 !important;
+}
+
+.agent-handle:hover {
+  transform: scale(1.35);
+  background-color: #D4AF37 !important;
+  box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.2) !important;
+}
+
+/* Range Input (Slider) Custom Styling */
+input[type='range'].gold-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type='range'].gold-slider::-webkit-slider-runnable-track {
+  background: #26262E;
+  height: 5px;
+  border-radius: 999px;
+}
+
+input[type='range'].gold-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  margin-top: -5px;
+  background-color: #D4AF37;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  border: 2px solid #121216;
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.4);
+  transition: transform 120ms ease, background-color 120ms ease;
+}
+
+input[type='range'].gold-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+  background-color: #E5C349;
+}

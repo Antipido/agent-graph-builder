@@ -1,0 +1,33 @@
+services:
+  # Produção (Padrão): Compila o bundle estático e serve via Nginx (non-root)
+  # Comando: docker compose up --build -d
+  agent-graph-builder:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: runtime
+      args:
+        NODE_ENV: production
+        APP_PORT: 8080
+    container_name: agent-graph-builder
+    ports:
+      - "${PORT:-8080}:8080"
+    restart: unless-stopped
+
+  # Desenvolvimento (Opcional com Hot-Reload no Vite)
+  # Comando: docker compose --profile dev up --build
+  agent-graph-builder-dev:
+    profiles:
+      - dev
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: dev
+    container_name: agent-graph-builder-dev
+    ports:
+      - "5173:5173"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    environment:
+      - NODE_ENV=development

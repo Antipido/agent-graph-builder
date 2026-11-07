@@ -1,0 +1,13 @@
+node_modules
+dist
+.git
+.gitignore
+.npm
+.gemini
+.agents
+.claude
+*.log
+npm-debug.log*
+.DS_Store
+.env
+.env.*
