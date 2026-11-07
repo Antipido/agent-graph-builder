@@ -9,12 +9,12 @@ Ferramenta visual baseada em nós (*node-based canvas*) para arquitetar fluxos d
 O projeto conta com um [Dockerfile](file:///home/antigravity/Dockerfile) *multi-stage* (Node 24 Alpine + Nginx 1.27 Alpine) e [docker-compose.yml](file:///home/antigravity/docker-compose.yml) prontos para produção e desenvolvimento.
 
 ### 1. Modo Produção (Recomendado — Nginx otimizado)
-Compila a aplicação estática TypeScript/Vite e serve via Nginx na porta `8080`:
+Compila a aplicação estática TypeScript/Vite e serve via Nginx na porta `3210`:
 
 ```bash
 docker compose up --build -d
 ```
-Acesse em: **http://localhost:8080**
+Acesse em: **http://localhost:3210**
 
 Para encerrar o container:
 ```bash
@@ -32,7 +32,7 @@ Acesse em: **http://localhost:5173**
 ### 3. Usando Docker CLI puro (sem Docker Compose)
 ```bash
 docker build -t agent-graph-builder .
-docker run --rm -p 8080:8080 --name agent-graph-builder agent-graph-builder
+docker run --rm -p 3210:8080 --name agent-graph-builder agent-graph-builder
 ```
 
 ---

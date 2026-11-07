@@ -9,7 +9,7 @@
     "lint": "oxlint",
     "preview": "vite preview",
     "docker:build": "docker build -t agent-graph-builder .",
-    "docker:run": "docker run --rm -p 8080:8080 --name agent-graph-builder agent-graph-builder",
+    "docker:run": "docker run --rm -p 3210:8080 --name agent-graph-builder agent-graph-builder",
     "docker:up": "docker compose up --build -d",
     "docker:dev": "docker compose --profile dev up --build",
     "docker:down": "docker compose down"

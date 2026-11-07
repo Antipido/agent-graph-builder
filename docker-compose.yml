@@ -11,7 +11,7 @@ services:
         APP_PORT: 8080
     container_name: agent-graph-builder
     ports:
-      - "${PORT:-8080}:8080"
+      - "${PORT:-3210}:8080"
     restart: unless-stopped
 
   # Desenvolvimento (Opcional com Hot-Reload no Vite)
